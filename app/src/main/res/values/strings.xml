@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SimpleImagePicker</string>
+    <string name="storage_permission_for_profile_picture">Storage Permission is requested to capture images for profile picture</string>
+    <string name="select_single_image">Select Single Image</string>
+</resources>
