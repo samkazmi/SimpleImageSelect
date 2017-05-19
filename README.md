@@ -69,6 +69,12 @@ Note: If you are using this method in a fragment you must use `this` as the seco
         }
 ```
 
+#### Also add these permissions in your manifest file
+```
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+ ```
 ###### and lastly to clear config variables
 
 ```java
