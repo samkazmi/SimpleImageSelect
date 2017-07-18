@@ -55,7 +55,7 @@ public class SimpleImageSelect {
         }
     }
 
-    public void chooseSingleImage(int type, Fragment fragment) {
+    public static void chooseSingleImage(int type, Fragment fragment) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(fragment.getContext());
         CHOOSE_TITLE = preferences.getString("title", "Select photo from");
         APP_NAME = preferences.getString("folderName", "AppName");
@@ -70,10 +70,10 @@ public class SimpleImageSelect {
         // Bundle extras = data.getExtras();
         // Bitmap imageBitmap = (Bitmap) extras.get("data");
         if (requestCode == Config.REQUEST_CODE_PICK_SINGLE_IMAGE && resultCode == Activity.RESULT_OK) {
-            if (data == null) {
-                return getPathOfImagePathTakenFromCamera();
-            } else {
+            if (data != null && data.getData() != null) {
                 return getPathOfImageTakenFromGallery(data, context);
+            } else {
+                return getPathOfImagePathTakenFromCamera();
             }
         } else if (resultCode == Activity.RESULT_CANCELED) {
             if (photoFile != null) {
